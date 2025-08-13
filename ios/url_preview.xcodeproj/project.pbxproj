@@ -12,6 +12,7 @@
 		443D38D377B4D369022276A8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A653FF502E4CC75400F1BDB7 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A653FF4F2E4CC75400F1BDB7 /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-url_preview.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-url_preview.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = url_preview/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = url_preview/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A653FF542E4CC8A900F1BDB7 /* UrlMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlMeta.swift; sourceTree = "<group>"; };
+		A653FF562E4CC90400F1BDB7 /* UrlMeta.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UrlMeta.m; sourceTree = "<group>"; };
+		A653FF572E4CCA6000F1BDB7 /* url_preview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "url_preview-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -33,6 +37,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-url_preview.a in Frameworks */,
+				A653FF502E4CC75400F1BDB7 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				A653FF532E4CC86200F1BDB7 /* UrlMeta */,
+				A653FF572E4CCA6000F1BDB7 /* url_preview-Bridging-Header.h */,
 			);
 			name = url_preview;
 			sourceTree = "<group>";
@@ -87,6 +94,15 @@
 				13B07F961A680F5B00A75B9A /* url_preview.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A653FF532E4CC86200F1BDB7 /* UrlMeta */ = {
+			isa = PBXGroup;
+			children = (
+				A653FF562E4CC90400F1BDB7 /* UrlMeta.m */,
+				A653FF542E4CC8A900F1BDB7 /* UrlMeta.swift */,
+			);
+			path = UrlMeta;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -144,6 +160,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				A653FF4E2E4CC75400F1BDB7 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -473,6 +492,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A653FF4E2E4CC75400F1BDB7 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A653FF4F2E4CC75400F1BDB7 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A653FF4E2E4CC75400F1BDB7 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }

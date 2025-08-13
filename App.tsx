@@ -5,40 +5,34 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import UrlInput from './src/component/urlInput.tsx';
+import { useState } from 'react';
+import UrlContainerList from './src/component/urlContainerList.tsx';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
-
+  const [urls, setUrls] = useState<string[]>([]);
+  const addUrl = (url: string) => {
+    const data = url.split('\n');
+    setUrls(pre => [...data, ...pre]);
+  };
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
+      <View style={styles.container}>
+        <UrlInput onSubmit={addUrl} clearOnSubmit={false} />
+        <UrlContainerList urls={urls} />
+      </View>
     </SafeAreaProvider>
-  );
-}
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
 });
 
