@@ -1,5 +1,5 @@
 
-# React Native UrlMetadata
+# React Native Url Preview
 ![아키텍처](./demo.gif)
 ## 소개
 메타 데이터를 Native영역에서 요청하여 기존 JSThread나 UIThread에 영향없이 많은 URL의 메타 데이터를 수집할 수 있는 예제 프로젝트 입니다
